@@ -10,18 +10,19 @@ import SwiftUI
 struct Home: View {
 	
 	@State var dragOffset: CGSize = .zero
-	
 	var body: some View {
 		// MARK: - Single MetaBall Animation
-		VStack {
-			singleMetaBall()
-		}
+		NavigationView {
+			VStack {
+				singleMetaBall()
+			}
+		}.navigationTitle("MetaBall Animation")
 	}
 	
 	@ViewBuilder
 	func singleMetaBall() -> some View {
 		Rectangle()
-			.fill(.linearGradient(colors: [.yellow, .purple, .orange, .mint], startPoint: .top, endPoint: .bottom))
+			.fill(.linearGradient(colors: [.orange, .yellow, .purple, .green], startPoint: .top, endPoint: .bottom))
 			.mask {
 				Canvas { context, size in
 					context.addFilter(.alphaThreshold(min: 0.5, color: .white))
