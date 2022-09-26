@@ -12,11 +12,14 @@ struct Home: View {
 	@State var dragOffset: CGSize = .zero
 	var body: some View {
 		// MARK: - Single MetaBall Animation
-		NavigationView {
+		 
 			VStack {
+				Text("MetaBall Animation").font(.largeTitle)
+				Spacer()
+				Spacer()
+				Spacer()
 				singleMetaBall()
 			}
-		}.navigationTitle("MetaBall Animation")
 	}
 	
 	@ViewBuilder
@@ -34,7 +37,7 @@ struct Home: View {
 						// MARK: Placing Symbols
 						for index in [1, 2] {
 							if let resolvedView = context.resolveSymbol(id: index) {
-								ctx.draw(resolvedView, at: CGPoint(x: size.width / 2, y: size.height / 2 - 75))
+								ctx.draw(resolvedView, at: CGPoint(x: size.width / 2, y: size.height / 2 - 40))
 							}
 						}
 					}
